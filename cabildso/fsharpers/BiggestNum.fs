@@ -2,13 +2,22 @@
 
 open System
 
-let getMax list = list |> max
+let getMax list = list |> List.max
 
-let getMax2 list =
-    let rec getMax2' max list =
-        match list with
-        | head::tail -> tail |> getMax2' (if max >= head then max else head)
-        | []         -> max
-    list |> List.tail |> getMax2' (list |> List.head)
+let getMax2 input =
+    let rec getMax2' highest list =
+        match input with
+        | head::tail -> getMax2' (max highest head) tail
+        | []         -> highest
+    input 
+    |> List.tail 
+    |> getMax2' (input |> List.head)
 
-let getMax3 list = list |> List.fold (fun max item -> if item > max then item else max) (list |> List.head)
+let getMax3 list = list |> List.fold (fun highest item -> max highest item) (list |> List.head)
+
+let getMax4 input =
+    let rec getMax4' highest list =
+        match input with
+        | head::tail -> getMax4' (max highest head) tail
+        | []         -> highest
+    getMax4' (List.head input) (List.tail input)
