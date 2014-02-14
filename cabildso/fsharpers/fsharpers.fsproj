@@ -44,6 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BiggestNum.fs" />
+    <Compile Include="Person.fs" />
+    <Compile Include="PersonExtensions.fs" />
+    <Compile Include="PersonRunner.fs" />
+    <Compile Include="StackCalculator.fs" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>

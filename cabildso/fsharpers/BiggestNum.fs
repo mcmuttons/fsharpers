@@ -11,9 +11,11 @@ let getMax2 input =
         | []         -> highest
     input 
     |> List.tail 
-    |> getMax2' (input |> List.head)
+    |> getMax2' (List.head input)
 
-let getMax3 list = list |> List.fold (fun highest item -> max highest item) (list |> List.head)
+let getMax3 list = 
+    list 
+    |> List.fold (fun highest item -> max highest item) (list |> List.head)
 
 let getMax4 input =
     let rec getMax4' highest list =
